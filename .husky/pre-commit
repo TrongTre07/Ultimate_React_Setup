@@ -1,1 +1,3 @@
-pnpm test
+# .husky/pre-commit
+
+
