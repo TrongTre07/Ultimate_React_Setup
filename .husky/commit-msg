@@ -1,0 +1,19 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Read the current commit message
+commit_message=$(cat "$1")
+
+# Define a pattern to match against (Conventional Commit example)
+pattern="^(feat|fix|chore|docs|style|refactor|test|perf)(\(.+\))?: .+$"
+
+# Check if the commit message matches the pattern
+if ! grep -qE "$pattern" "$1"; then
+  echo "❌ Commit message does not follow the pattern!"
+  echo "Format should be: <type>(<scope>): <subject>"
+  echo "Example: feat(api): add new authentication"
+  echo "Aborting commit."
+  exit 1
+fi
+
+echo "✅ Commit message follows the correct pattern."

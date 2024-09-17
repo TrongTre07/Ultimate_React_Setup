@@ -1,13 +1,13 @@
-import { useState } from "react";
 import "./App.css";
-import useCounter from "./hooks/CustomHook";
+
+import { useState } from "react";
 
 import viteLogo from "/vite.svg";
+
 import reactLogo from "./assets/react.svg";
+
 function App() {
   const [count, setCount] = useState(0);
-
-  const a = useCounter(0);
 
   return (
     <>

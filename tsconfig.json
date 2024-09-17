@@ -3,5 +3,35 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@router": ["src/router/index.ts"],
+      "@theme": ["src/theme/index.ts"],
+      "@hooks": ["src/hooks/index.ts"],
+      "@api": ["src/api/index.ts"],
+      "@constants": ["src/constants/index.ts"],
+      "@utils": ["src/utils/index.ts"],
+      "@stores": ["src/stores/index.ts"],
+
+      "@views/*": ["src/views/*"],
+      "@router/*": ["src/router/*"],
+      "@HOCs/*": ["src/HOCs/*"],
+      "@stores/*": ["src/stores/*"],
+      "@api/*": ["src/api/*"],
+      "@constants/*": ["src/constants/*"],
+      "@utils/*": ["src/utils/*"],
+      "@components/*": ["src/components/*"],
+      "@theme/*": ["src/theme/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@/*": ["src/*"]
+    },
+    "target": "ES6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "dist"]
 }
